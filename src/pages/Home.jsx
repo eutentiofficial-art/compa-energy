@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-2 space-y-4">
+    <div className="max-w-lg mx-auto px-8 py-2 space-y-4">
 
       {/* Hero */}
       <div className="text-center pt-1 pb-2">
@@ -37,12 +37,12 @@ const Home = () => {
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => navigate('/confronta?percorso=manuale')}
-            className="bg-violet-600 hover:bg-violet-500 rounded-2xl p-4 flex flex-col items-center text-center transition-colors">
+            className="bg-purple-600 hover:bg-purple-500 rounded-2xl p-4 flex flex-col items-center text-center transition-colors">
             <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-2">
               <ClipboardList className="w-5 h-5 text-white" />
             </div>
             <span className="text-white font-bold text-sm leading-tight mb-1">Compila i campi</span>
-            <span className="text-violet-100 text-xs">Guida passo passo</span>
+            <span className="text-purple-100 text-xs">Guida passo passo</span>
           </motion.button>
         </div>
       </div>
@@ -69,8 +69,8 @@ const Home = () => {
           </div>
         </div>
         <div className="flex items-start gap-3">
-          <div className="w-9 h-9 bg-violet-50 rounded-xl flex items-center justify-center flex-shrink-0">
-            <Phone className="w-4 h-4 text-violet-600" />
+          <div className="w-9 h-9 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Phone className="w-4 h-4 text-purple-600" />
           </div>
           <div>
             <p className="text-sm font-semibold text-slate-800">Un operatore ti segue</p>
