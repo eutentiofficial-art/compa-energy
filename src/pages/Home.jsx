@@ -10,7 +10,7 @@ const Home = () => {
     <div className="max-w-lg mx-auto px-4 py-2 space-y-4">
 
       {/* Hero */}
-      <div className="text-center pt-1 pb-2">
+      <div className="text-center pt-1 pb-0">
         <h1 className="text-3xl font-bold text-slate-900 mb-1 leading-tight">
           Trova la tua<br />
           <span className="text-blue-600">offerta migliore</span>
