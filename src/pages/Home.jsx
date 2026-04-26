@@ -25,28 +25,24 @@ const Home = () => {
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => navigate('/bolletta')}
-            className="bg-blue-600 hover:bg-blue-500 rounded-2xl p-4 flex flex-row items-center gap-3 transition-colors">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            className="bg-blue-600 hover:bg-blue-500 rounded-2xl p-4 flex flex-col items-center text-center transition-colors">
+            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-2">
               <Upload className="w-5 h-5 text-white" />
             </div>
-            <div className="text-left">
-              <span className="text-white font-bold text-sm leading-tight block">Carica bolletta</span>
-              <span className="text-blue-100 text-xs block">Automatico e veloce</span>
-              <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full mt-1 inline-block">✦ Consigliato</span>
-            </div>
+            <span className="text-white font-bold text-sm leading-tight mb-1">Carica bolletta</span>
+            <span className="text-blue-100 text-xs mb-2">Automatico e veloce</span>
+            <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full">✦ Consigliato</span>
           </motion.button>
 
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => navigate('/confronta?percorso=manuale')}
-            className="bg-violet-600 hover:bg-violet-500 rounded-2xl p-4 flex flex-row items-center gap-3 transition-colors">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            className="bg-violet-600 hover:bg-violet-500 rounded-2xl p-4 flex flex-col items-center text-center transition-colors">
+            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-2">
               <ClipboardList className="w-5 h-5 text-white" />
             </div>
-            <div className="text-left">
-              <span className="text-white font-bold text-sm leading-tight block">Compila i campi</span>
-              <span className="text-violet-100 text-xs block">Guida passo passo</span>
-            </div>
+            <span className="text-white font-bold text-sm leading-tight mb-1">Compila i campi</span>
+            <span className="text-violet-100 text-xs">Guida passo passo</span>
           </motion.button>
         </div>
       </div>
