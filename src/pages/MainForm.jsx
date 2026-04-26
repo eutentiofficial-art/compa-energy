@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { RefreshCw, FileImage, ClipboardList, ChevronRight, Zap } from 'lucide-react'
+import { RefreshCw, FileImage, ClipboardList } from 'lucide-react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useForm } from '../contexts/FormContext'
@@ -11,7 +11,6 @@ import Step4OfferDetails from '../components/Step4OfferDetails'
 import Step5PersonalData from '../components/Step5PersonalData'
 import Step6Confirmation from '../components/Step6Confirmation'
 
-// Opzioni scelta percorso — stesso stile di Step1ClientType
 const scelte = [
   {
     id: 'bolletta',
@@ -31,7 +30,6 @@ const scelte = [
   }
 ]
 
-// ── Step 0: scelta percorso ───────────────────────────────────────────────────
 const Step0Scelta = ({ onScegliManuale }) => {
   const navigate = useNavigate()
 
@@ -52,7 +50,6 @@ const Step0Scelta = ({ onScegliManuale }) => {
         <p className="text-lg text-slate-600">Come preferisci procedere?</p>
       </div>
 
-      {/* Stessa griglia di Step1ClientType: 2 colonne affiancate anche su mobile */}
       <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-lg mx-auto">
         {scelte.map((s, i) => {
           const Icon = s.icon
@@ -87,13 +84,11 @@ const Step0Scelta = ({ onScegliManuale }) => {
   )
 }
 
-// ── MainForm ──────────────────────────────────────────────────────────────────
 const MainForm = () => {
   const { currentStep, resetForm } = useForm()
   const [percorso, setPercorso] = useState(null)
   const location = useLocation()
 
-  // Quando si torna alla home (navigazione da logo o link), resetta tutto
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const p = params.get('percorso')
@@ -122,12 +117,10 @@ const MainForm = () => {
     }
   }
 
-  // Step 0 — scelta percorso
   if (!percorso) {
     return <Step0Scelta onScegliManuale={() => setPercorso('manuale')} />
   }
 
-  // Percorso manuale — flusso esistente invariato
   return (
     <div className="container mx-auto max-w-6xl">
       {currentStep > 1 && currentStep < 6 && <ProgressSteps />}
