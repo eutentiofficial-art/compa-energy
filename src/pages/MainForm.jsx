@@ -93,6 +93,7 @@ const MainForm = () => {
     const params = new URLSearchParams(location.search)
     const p = params.get('percorso')
     if (p === 'manuale') {
+      resetForm()
       setPercorso('manuale')
     } else {
       setPercorso(null)
