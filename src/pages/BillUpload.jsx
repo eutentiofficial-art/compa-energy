@@ -81,8 +81,14 @@ const BillUpload = () => {
 
       const dati = risultato.dati
 
+      // Verifica che sia una bolletta energia
+      if (dati.valida === false) {
+        setErroreMsg(dati.motivo || 'Il documento caricato non è una bolletta luce o gas.')
+        setFase(FASE.ERRORE)
+        return
+      }
+
       // Verifica che i dati minimi siano presenti
-      // Se manca l'importo totale non possiamo procedere
       if (!dati.importo_totale) {
         setFase(FASE.NON_LEGGIBILE)
         return
