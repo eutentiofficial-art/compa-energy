@@ -1,13 +1,13 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Upload, ClipboardList, Shield, Euro, Phone } from 'lucide-react'
+import { FileImage, ClipboardList, Shield, Euro, Phone } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const Home = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="max-w-lg mx-auto px-8 py-2 space-y-4">
+    <div className="max-w-lg mx-auto px-4 py-2 space-y-4">
 
       {/* Hero */}
       <div className="text-center pt-1 pb-2">
@@ -18,32 +18,42 @@ const Home = () => {
         <p className="text-slate-500 text-base">Confronta luce e gas. Gratis, in 2 minuti.</p>
       </div>
 
-      {/* I 2 box di scelta */}
+      {/* I 2 box di scelta — identici all'originale, solo più stretti */}
       <div>
-        <p className="text-center text-sm text-slate-400 mb-3">Come preferisci procedere?</p>
+        <p className="text-center text-lg text-slate-600 mb-4">Come preferisci procedere?</p>
         <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
           <motion.button
-            whileTap={{ scale: 0.97 }}
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0 }}
             onClick={() => navigate('/bolletta')}
-            className="bg-blue-600 hover:bg-blue-500 rounded-2xl p-4 flex flex-col items-center text-center transition-colors">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-2">
-              <Upload className="w-5 h-5 text-white" />
+            className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 transform py-5 px-2">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600" />
+            <div className="relative text-white">
+              <FileImage className="w-8 h-8 mx-auto mb-2" strokeWidth={1.5} />
+              <h3 className="text-sm font-bold mb-0.5 leading-tight">Carica bolletta</h3>
+              <p className="text-xs text-white/90 leading-tight">Automatico e veloce</p>
+              <span className="inline-block mt-1.5 bg-white/20 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                ⚡ Consigliato
+              </span>
             </div>
-            <span className="text-white font-bold text-sm leading-tight mb-1">Carica bolletta</span>
-            <span className="text-blue-100 text-xs mb-2">Automatico e veloce</span>
-            <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full">✦ Consigliato</span>
           </motion.button>
 
           <motion.button
-            whileTap={{ scale: 0.97 }}
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.08 }}
             onClick={() => navigate('/confronta?percorso=manuale')}
-            className="bg-purple-600 hover:bg-purple-500 rounded-2xl p-4 flex flex-col items-center text-center transition-colors">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-2">
-              <ClipboardList className="w-5 h-5 text-white" />
+            className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 transform py-5 px-2">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-600" />
+            <div className="relative text-white">
+              <ClipboardList className="w-8 h-8 mx-auto mb-2" strokeWidth={1.5} />
+              <h3 className="text-sm font-bold mb-0.5 leading-tight">Compila i campi</h3>
+              <p className="text-xs text-white/90 leading-tight">Guida passo passo</p>
             </div>
-            <span className="text-white font-bold text-sm leading-tight mb-1">Compila i campi</span>
-            <span className="text-purple-100 text-xs">Guida passo passo</span>
           </motion.button>
+        </div>
+
+        <div className="mt-4 text-center">
+          <p className="text-sm text-slate-500">🔒 I tuoi dati sono al sicuro e protetti</p>
         </div>
       </div>
 
