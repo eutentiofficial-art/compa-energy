@@ -20,7 +20,7 @@ const Home = () => {
 
       {/* I 2 box di scelta — identici all'originale, solo più stretti */}
       <div>
-        <p className="text-center text-lg text-slate-600 mb-2">Come preferisci procedere?</p>
+        <p className="text-center text-lg text-slate-600 mb-0">Come preferisci procedere?</p>
         <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
           <motion.button
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
