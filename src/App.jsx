@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { FormProvider } from './contexts/FormContext'
+import Home from './pages/Home'
 import MainForm from './pages/MainForm'
 import BillUpload from './pages/BillUpload'
 import AdminApp from './pages/AdminApp'
@@ -10,7 +11,6 @@ import CookiePolicy from './pages/CookiePolicy'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-// Wrapper che mostra Header/Footer solo fuori dall'admin
 const Layout = ({ children }) => {
   const location = useLocation()
   const isAdmin = location.pathname.startsWith('/admin')
