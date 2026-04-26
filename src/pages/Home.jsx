@@ -36,7 +36,7 @@ const Home = () => {
 
           <motion.button
             whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/?percorso=manuale')}
+            onClick={() => navigate('/confronta?percorso=manuale')}
             className="bg-violet-600 hover:bg-violet-500 rounded-2xl p-6 flex flex-col items-center text-center transition-colors">
             <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
               <ClipboardList className="w-6 h-6 text-white" />
