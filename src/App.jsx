@@ -32,7 +32,8 @@ function App() {
       <FormProvider>
         <Layout>
           <Routes>
-            <Route path="/" element={<MainForm />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/confronta" element={<MainForm />} />
             <Route path="/bolletta" element={<BillUpload />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/termini-e-condizioni" element={<TerminiCondizioni />} />
