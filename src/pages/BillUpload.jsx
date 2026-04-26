@@ -106,13 +106,8 @@ const BillUpload = () => {
       setDatiEstratti(dati)
 
       // Precompila nome/cognome se estratti
-      if (dati.intestatario) {
-        const parti = dati.intestatario.trim().split(/\s+/)
-        if (parti.length >= 2) {
-          setCognome(parti[0])
-          setNome(parti.slice(1).join(' '))
-        }
-      }
+      if (dati.nome) setNome(dati.nome)
+      if (dati.cognome) setCognome(dati.cognome)
 
       setFase(FASE.CONTATTI)
 
