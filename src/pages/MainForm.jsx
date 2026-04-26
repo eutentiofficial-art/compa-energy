@@ -101,6 +101,10 @@ const MainForm = () => {
     }
   }, [location.key])
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [currentStep])
+
   const handleReset = () => {
     setPercorso(null)
     resetForm()
@@ -124,7 +128,7 @@ const MainForm = () => {
 
   return (
     <div className="container mx-auto max-w-6xl">
-      {currentStep > 1 && currentStep < 6 && <ProgressSteps />}
+      {currentStep >= 1 && currentStep < 6 && <ProgressSteps />}
 
       <AnimatePresence mode="wait">
         <motion.div
