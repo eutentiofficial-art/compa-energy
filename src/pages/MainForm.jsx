@@ -95,8 +95,14 @@ const MainForm = () => {
 
   // Quando si torna alla home (navigazione da logo o link), resetta tutto
   useEffect(() => {
-    setPercorso(null)
-    resetForm()
+    const params = new URLSearchParams(location.search)
+    const p = params.get('percorso')
+    if (p === 'manuale') {
+      setPercorso('manuale')
+    } else {
+      setPercorso(null)
+      resetForm()
+    }
   }, [location.key])
 
   const handleReset = () => {
