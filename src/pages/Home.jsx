@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-2 space-y-2">
+    <div className="max-w-lg mx-auto px-4 py-0 space-y-2">
 
       {/* Hero */}
       <div className="text-center pt-1 pb-0">
